@@ -1,0 +1,9 @@
+# Generated output
+*.csv
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Agent / editor local state
+.omo/

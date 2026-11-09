@@ -1,0 +1,63 @@
+# Military and defence brand keywords - one keyword per line.
+# Multi-word brands are matched by the token-all rule.
+#
+# Note the deliberate pairing of domain-form and bare-token keywords:
+# "army.mil" cannot match "army-mil.com" because the keyword contains a
+# literal dot that the typosquat replaced with a hyphen, so the bare token
+# "army" is what catches that variant. Real brand lists keep both forms.
+
+# Government and military domains
+defense.gov
+army.mil
+navy.mil
+af.mil
+marines.mil
+spaceforce.mil
+uscg.mil
+nato
+
+# Bare brand tokens (catch hyphen, dot and word-injection typosquats)
+army
+navy
+defense
+military
+
+# Defence contractors and primes
+lockheedmartin
+lockheed martin
+raytheon
+northropgrumman
+northrop grumman
+baesystems
+generaldynamics
+leidos
+boeing
+
+# Agencies
+defense logistics agency
+
+# Short forms below the default --min-length 4, so they are ignored by default.
+# Run with --min-length 3 to bring dod back in.
+dod
+usaf
+
+# Spanish military and defence brands. Same pairing rule as above: the keyword
+# "defensa.gob.es" holds literal dots that a typosquat replaces with hyphens,
+# so it cannot catch "defensa-gob-es.com" - the bare token "defensa" does that,
+# and the domain-form keyword is what earns the genuine domain an 'exact' verdict.
+
+# Official Spanish government and armed services domains
+defensa.gob.es
+ejercito.defensa.gob.es
+armada.defensa.gob.es
+
+# Bare Spanish tokens (catch hyphen, dot and word-injection typosquats)
+defensa
+armada
+ejercito
+militar
+otan
+
+# Short forms below the default --min-length 4. "mde" is the Ministry's own
+# short domain (mde.es); --min-length 3 brings it back in.
+mde

@@ -1,0 +1,33 @@
+defense.gov
+army.mil
+navy.mil
+af.mil
+marines.mil
+spaceforce.mil
+uscg.mil
+nato
+army
+navy
+defense
+military
+lockheedmartin
+lockheed martin
+raytheon
+northropgrumman
+northrop grumman
+baesystems
+generaldynamics
+leidos
+boeing
+defense logistics agency
+dod
+usaf
+defensa.gob.es
+ejercito.defensa.gob.es
+armada.defensa.gob.es
+defensa
+armada
+ejercito
+militar
+otan
+mde

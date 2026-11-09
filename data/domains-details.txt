@@ -1,0 +1,137 @@
+# Military and defence themed sample feed for the containment filter.
+# Grouped by the attack technique each block demonstrates.
+# Lines starting with # are comments; blank lines are ignored.
+
+# --- Genuine brand domains: legitimate owners, must match ---
+army.mil
+www.army.mil
+defense.gov
+nato.int
+
+# --- Credential harvesting: brand token plus a lure word. Containment catches these ---
+defense.gov-verify.net
+army-access-portal.com
+navy-retirement-benefits.com
+us-military-benefits.com
+defense-procurement-center.com
+
+# --- Subdomain prefix abuse: the real domain is only a prefix, the lure owns the TLD ---
+army.mil.secure-login.com
+login.defense.gov.secure-check.com
+
+# --- Separator swap: a literal dot in the keyword becomes a hyphen, token form still catches it ---
+army-mil.com
+defense-gov.info
+
+# --- Digit substitution: the filter is blind to this, needs fuzzy matching ---
+d0d.gov
+
+# --- Homoglyph domains: Cyrillic code points posing as Latin. Blind to containment. ---
+# The filter WILL NOT flag these. That is the point of including them.
+аrmy.mil
+defenсе.gov
+nаto.int
+
+# --- Keyword stuffing: many brands crammed into one domain ---
+military-defense-army-navy.com
+
+# --- Spanish armed services: genuine domains, must match ---
+defensa.gob.es
+ejercito.defensa.gob.es
+armada.defensa.gob.es
+defensa.es
+mde.es
+emad.defensa.gob.es
+sede.defensa.gob.es
+ejercitodelaireydelespacio.defensa.gob.es
+
+# --- Spanish typosquats: one character edited out. Containment cannot see these,
+# the Levenshtein filter must catch each at distance 1 ---
+ejercit0.es
+defenca.es
+armnda.com
+
+# --- Spanish homoglyph: Cyrillic small a (U+0430) posing as a Latin a ---
+аrmada.com
+
+# --- Spanish subdomain prefix abuse: the real domain is only a prefix ---
+defensa.es.acceso-verificacion.com
+
+# --- Spanish single-edit typosquats: one character changed, added or deleted.
+# Containment is blind to all of these; the Levenshtein filter must get each
+# at distance 1. d0f3nsa.es is deliberately two edits and misses at the
+# default --max-distance 1: run with --max-distance 2 to bring it in ---
+ejrcito.es
+armda.es
+d0fensa.es
+armadaa.com
+mdee.es
+d0f3nsa.es
+
+# --- Spanish homoglyphs: Cyrillic small e (U+0435) posing as a Latin e ---
+defеnsa.es
+еjercito.es
+
+# --- Spanish separator swap: a dot in the brand becomes a hyphen, so the
+# Levenshtein filter cannot reach it and containment has to carry the catch ---
+defensa-gob.es
+armada-gob.es
+
+# --- Spanish credential harvesting: brand token plus a Spanish lure word.
+# Containment catches these; the Levenshtein filter cannot, the labels are
+# far too long from the brand once the lure word is attached ---
+verificacion-defensa.com
+portal-ejercito.com
+acceso-armada.net
+defensagob-es.com
+ejercito-espana.com
+
+# --- Spanish subdomain prefix abuse: the real domain is only a prefix ---
+defensa.gob.es.acceso-seguro.com
+ejercito.defensa.gob.es.login-red.net
+armada.defensa.gob.es.verificar.info
+
+# --- Spanish keyword stuffing: several service brands in one label ---
+ejercito-armada-defensa.com
+fuerzas-armadas-espana.com
+
+# --- Spanish spelling of NATO. 'otan' is the keyword that carries this,
+# there is no English spelling anywhere in the domain ---
+otan-espana.com
+
+# --- Levenshtein distance 2-6 band: threshold-sweep test cases.
+# Every one is distance >= 2, so the default --max-distance 1 must flag NONE.
+# Distances are measured against the intended brand and verified equal to the
+# overall minimum across the legitimate list. Expected sweep:
+#   md2: armada55, ejerc1t0            md3: + armada-es, defensa-es
+#   md5: + lockh33dm4r71n              never: nato-es, armada2026, army2026,
+#                                        ejercito-es-1, defensa-es-01
+# "never" is the edit budget cap min(max_distance, len(brand)//2): nato and
+# army cap at 2, armada/defensa at 3, ejercito at 4, and these sit above it ---
+armada55.com
+ejerc1t0.es
+armada-es.com
+defensa-es.net
+nato-es.com
+armada2026.com
+army2026.com
+ejercito-es-1.com
+defensa-es-01.com
+lockh33dm4r71n.com
+
+# --- Clean Spanish third-party domains: must NOT match ---
+reuters.com
+bbc.com
+wikipedia.org
+github.com
+elpais.com
+marca.com
+rtve.es
+elmundo.es
+bbva.com
+amazon.es
+renfe.com
+
+# --- Deliberately broken lines below: must be skipped, never crash the run ---
+notadomain
+bad domain with spaces

@@ -1,0 +1,47 @@
+# Legitimate defence and military domains the filter protects.
+# One domain per line. These are compared against the feed in data/domains.txt
+# by edit distance, so the list holds full domains, not bare tokens: the brand
+# lives in the registrable label ("army.mil" -> "army") and the TLD is ignored
+# during matching, because comparing against "mil" or "com" would flag the
+# TLD of nearly every domain in the feed.
+#
+# Only the registrable label is fuzzy-matched, so a domain with a label
+# shorter than --min-length contributes nothing to detection. That affects
+# "af.mil" (label "af"), which is too short to match on and is carried here
+# for completeness only.
+
+# US government and armed services
+army.mil
+navy.mil
+af.mil
+marines.mil
+spaceforce.mil
+uscg.mil
+dod.mil
+defense.gov
+
+# Allied and international
+nato.int
+
+# Defence contractors and primes
+lockheedmartin.com
+raytheon.com
+northropgrumman.com
+baesystems.com
+generaldynamics.com
+leidos.com
+boeing.com
+
+
+# Spain - Ministerio de Defensa and Fuerzas Armadas
+# The Ministry's own legal notice states that mde.es, defensa.es and
+# defensa.gob.es are its property. The service branches are subdomains of
+# defensa.gob.es, so each contributes its own registrable label and the
+# shared "gob.es" tail is never used for matching.
+defensa.gob.es
+defensa.es
+mde.es
+ejercito.defensa.gob.es
+armada.defensa.gob.es
+ejercitodelaireydelespacio.defensa.gob.es
+emad.defensa.gob.es
