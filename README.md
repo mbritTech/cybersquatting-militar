@@ -4,7 +4,9 @@
 > Repositorio SOLAMENTE disponible durante una semana.
 > Podéis descargaroslo de esta forma para visualizarlo más tarde:<br>
 > <img width="250" height="200" alt="cap-zip" src="https://github.com/user-attachments/assets/cec840d0-ea89-4cdf-b74c-c6156c9fad88" />
+</br>
 
+[**Aquí**](Diapositivas.pdf) podéis ver las diapositivas de la ponencia.
 
 Filtro en tres fases para detectar dominios sospechosos —cybersquatting,
 typosquatting y phishing— relacionados con marcas del ámbito de la defensa.
@@ -83,8 +85,7 @@ Es decir: 44 de los 73 dominios han coincidido con alguna marca.
 
 **DEMO**
 
-https://github.com/user-attachments/assets/5c8111c2-0a13-4637-bac0-31d6a0384bef
-
+https://github.com/user-attachments/assets/c7e3e1f5-882f-44f9-a7ad-d94ea9eda919
 
 
 ### Fase 2 — Distancia de Levenshtein
@@ -138,8 +139,7 @@ presupuesto) y `near-miss` (dentro de `--watch-distance`).
 
 **DEMO**
 
-https://github.com/user-attachments/assets/36653099-9982-4e18-97cf-4550716c2519
-
+https://github.com/user-attachments/assets/d4954146-0da2-4455-9b3a-d7e664520c7b
 
 
 ### Fase 3 — Comparación con una lista real de phishing
@@ -186,9 +186,7 @@ python3 phishing-filtering.py --domains data/domains.txt --phishing data/year.cs
 
 **DEMO**
 
-https://github.com/user-attachments/assets/1c05a4a5-3efd-4d51-b450-d9bc1b1b1f1a
-
-
+https://github.com/user-attachments/assets/e98e2e28-d6f6-4fde-bfda-796469ecb6e6
 
 
 ## Cómo leer el CSV
@@ -231,8 +229,7 @@ Si tus números coinciden, el entorno está bien montado.
 
 **DEMO**
 
-https://github.com/user-attachments/assets/e5082c0f-3a59-4896-bf31-ee4c51937723
-
+https://github.com/user-attachments/assets/98c82d94-53fb-4d64-9726-c34f07bf89d6
 
 
 ## Personalizar las listas
